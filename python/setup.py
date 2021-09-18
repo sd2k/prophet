@@ -132,6 +132,11 @@ setup(
     setup_requires=[
     ],
     install_requires=install_requires,
+    extras_require={
+        'pystan': ['pystan~=2.19.1.1'],
+        'cmdstanpy': ['cmdstanpy==0.9.68'],
+        'numpyro': ['numpyro>=0.7.2'],
+    },
     python_requires='>=3',
     zip_safe=False,
     include_package_data=True,
