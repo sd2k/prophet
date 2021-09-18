@@ -101,7 +101,7 @@ def run_mcmc(dat, n_iterations):
     else:
         nuts_kernel = NUTS(model_logistic)
 
-    mcmc = MCMC(nuts_kernel, num_warmup=n_iterations, num_samples=n_iterations)
+    mcmc = MCMC(nuts_kernel, num_warmup=n_iterations//2, num_samples=n_iterations//2, num_chains=4)
 
     rng_key = random.PRNGKey(0)
     y, X, t, s_m, s_a, sigmas, t_change, cap = _dat_to_jax_arrays(dat)
